@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0D0E12;
+  --bg-secondary: #13141a;
+  --color-pink: #E040FB;
+  --color-purple: #7C4DFF;
+  --color-pink-dark: #AD1457;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  direction: rtl;
+  font-family: 'Cairo', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #0D0E12;
+  color: white;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* إخفاء شريط التمرير */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* Safe area for mobile */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Neon glow effects */
+.glow-pink {
+  box-shadow: 0 0 20px rgba(224, 64, 251, 0.4), 0 0 40px rgba(224, 64, 251, 0.2);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(124, 77, 255, 0.4), 0 0 40px rgba(124, 77, 255, 0.2);
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Font loaded above */
